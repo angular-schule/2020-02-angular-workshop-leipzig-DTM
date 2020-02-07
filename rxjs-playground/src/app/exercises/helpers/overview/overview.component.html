@@ -1,0 +1,27 @@
+<h1>Exercises</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Folder</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tr *ngFor="let e of exercises; index as i">
+    <td>
+      {{ i + 1 }}
+    </td>
+    <td>
+      {{ e.name }}
+    </td>
+    <td>
+      <img src="assets/angular-logo.svg" width="20" class="mr-2">
+      <code>{{ e.folder }}</code>
+    </td>
+    <td class="text-center">
+      <a class="btn btn-sm btn-success" [routerLink]="['/exercises', e.folder]">Open</a>
+    </td>
+  </tr>
+</table>
