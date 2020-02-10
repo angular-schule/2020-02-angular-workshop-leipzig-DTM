@@ -1,9 +1,8 @@
-{{ books }}
+<br-book *ngFor="let b of books" [book]="b"></br-book>
 
-title
-isbn
-price
-description
-rating
+<ul>
+  <li *ngFor="let b of books; index as i">{{ i + 1 }} {{ b.title }}</li>
+</ul>
 
 
+<strong>Anzahl Bücher:</strong> {{ books.length }}
