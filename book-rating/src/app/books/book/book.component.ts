@@ -16,7 +16,7 @@ export class BookComponent implements OnInit {
   }
 
   getRating() {
-    return Array(this.book.rating);
+    return new Array(this.book.rating);
   }
 
 }
