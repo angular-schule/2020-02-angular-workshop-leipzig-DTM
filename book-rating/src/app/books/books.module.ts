@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { BooksRoutingModule } from './books-routing.module';
 import { BookComponent } from './book/book.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { WidgetModule } from '../widget/widget.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   ],
   imports: [
     CommonModule,
-    BooksRoutingModule
+    BooksRoutingModule,
+    WidgetModule
   ],
   exports: [
     DashboardComponent
