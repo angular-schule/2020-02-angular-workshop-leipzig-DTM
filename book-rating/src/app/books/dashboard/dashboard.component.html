@@ -1,24 +1,31 @@
-<br-book
-  *ngFor="let b of books"
-  [book]="b"
-  (rateUp)="rateUp($event)"
-  (rateDown)="rateDown($event)"></br-book>
+<ng-template #loading>
+  Bücher werden geladen...
+</ng-template>
 
-<ul>
-  <li *ngFor="let b of books; index as i">{{ i + 1 }} {{ b.title }}</li>
-</ul>
+<ng-container *ngIf="books; else loading">
+  <br-book
+    *ngFor="let b of books"
+    [book]="b"
+    (rateUp)="rateUp($event)"
+    (rateDown)="rateDown($event)"></br-book>
 
-
-<strong>Anzahl Bücher:</strong> {{ books.length }}
-
-
-<br-card [title]="books[0].title" body="Das ist ein Test">
-  hdsuvhoödsgjhsuidgfidsköjioh
-  <p>
-    <strong>Hallo Welt</strong>
-    {{ books[0].title }}
-  </p>
-</br-card>
+  <ul>
+    <li *ngFor="let b of books; index as i">{{ i + 1 }} {{ b.title }}</li>
+  </ul>
 
 
-<br-card body="Ein Test ohne Title"></br-card>
+  <strong>Anzahl Bücher:</strong> {{ books.length }}
+
+  <br-card [title]="books[0].title" body="Das ist ein Test">
+    hdsuvhoödsgjhsuidgfidsköjioh
+    <p>
+      <strong>Hallo Welt</strong>
+      {{ books[0].title }}
+    </p>
+  </br-card>
+
+
+  <br-card body="Ein Test ohne Title"></br-card>
+
+
+</ng-container>
