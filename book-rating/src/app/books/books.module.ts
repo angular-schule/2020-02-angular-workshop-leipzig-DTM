@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { BooksRoutingModule } from './books-routing.module';
 import { BookComponent } from './book/book.component';
@@ -26,7 +27,8 @@ import { SearchComponent } from './search/search.component';
   imports: [
     CommonModule,
     BooksRoutingModule,
-    WidgetModule
+    WidgetModule,
+    ReactiveFormsModule
   ]
 })
 export class BooksModule { }
