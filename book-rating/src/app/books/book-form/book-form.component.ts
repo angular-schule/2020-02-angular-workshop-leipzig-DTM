@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Book } from '../shared/book';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'br-book-form',
@@ -24,12 +24,40 @@ export class BookFormComponent implements OnInit {
       ]),
       title: new FormControl('', Validators.required),
       description: new FormControl(''),
-      price: new FormControl(0, Validators.min(2))
+      price: new FormControl(0, Validators.min(2)),
+      authors: new FormArray([
+        new FormControl(''),
+        new FormControl(''),
+        new FormControl('')
+      ])
     });
   }
 
+  get authors() {
+    return this.bookForm.get('authors') as FormArray;
+  }
+
+  addAuthorControl() {
+    this.authors.push(new FormControl(''));
+  }
+
   submitForm() {
-    this.submitBook.emit();
+    const book: Book = {
+      ...this.bookForm.value,
+      rating: 1
+    };
+
+    this.submitBook.emit(book);
+  }
+
+  isInvalid(name: string) {
+    const control = this.bookForm.get(name);
+    return control.invalid && control.touched;
+  }
+
+  hasError(name: string, errorCode: string) {
+    const control = this.bookForm.get(name);
+    return control.hasError(errorCode) && control.touched;
   }
 
 }
