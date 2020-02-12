@@ -1,6 +1,12 @@
 <div class="container">
   <h1>{{ title }}</h1>
 
+  <div class="mb-4">
+    <a routerLink="/books" class="mr-3">Dashboard</a>
+    <a routerLink="/books/create" class="mr-3">Buch erstellen</a>
+    <a routerLink="/books/search" class="mr-3">Suche</a>
+  </div>
+
   <router-outlet></router-outlet>
 
   <hr>
