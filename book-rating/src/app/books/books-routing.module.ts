@@ -11,7 +11,13 @@ const routes: Routes = [
     { path: 'foo', component: FooComponent },
     { path: 'bar', component: BarComponent }
   ] },
-  { path: 'books/:isbn', component: BookDetailsComponent }
+  {
+    path: 'books/:isbn',
+    component: BookDetailsComponent,
+    data: {
+      name: 'Angular'
+    }
+  }
 ];
 
 @NgModule({

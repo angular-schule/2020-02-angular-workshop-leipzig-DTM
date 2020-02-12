@@ -21,9 +21,6 @@ import { BarComponent } from './bar/bar.component';
     CommonModule,
     BooksRoutingModule,
     WidgetModule
-  ],
-  exports: [
-    DashboardComponent
   ]
 })
 export class BooksModule { }
