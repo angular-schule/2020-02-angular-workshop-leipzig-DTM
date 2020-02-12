@@ -3,9 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
+import { FooComponent } from './foo/foo.component';
+import { BarComponent } from './bar/bar.component';
 
 const routes: Routes = [
-  { path: 'books', component: DashboardComponent },
+  { path: 'books', component: DashboardComponent, children: [
+    { path: 'foo', component: FooComponent },
+    { path: 'bar', component: BarComponent }
+  ] },
   { path: 'books/:isbn', component: BookDetailsComponent }
 ];
 
