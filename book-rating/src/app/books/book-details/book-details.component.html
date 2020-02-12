@@ -1,6 +1,12 @@
-<p>book-details works!</p>
+<ng-container *ngIf="book">
+  <h2>{{ book.title }}</h2>
 
+  <p>
+    {{ book.description }}
+  </p>
+</ng-container>
 
 <hr>
 
-<a routerLink="/books">Zum Dashboard</a>
+<a routerLink="/books">Zum Dashboard</a><br>
+<a routerLink="/books/9783864906466">Zum Angular-Buch</a>
