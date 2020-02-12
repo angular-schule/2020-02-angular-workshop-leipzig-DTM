@@ -15,7 +15,7 @@ export class BookStoreService {
     return this.http.get<Book[]>(this.apiUrl + '/books');
   }
 
-  getSingle(isbn: string) {
+  getSingle(isbn: string) {w
     return this.http.get<Book>(`${this.apiUrl}/book/${isbn}`);
   }
 

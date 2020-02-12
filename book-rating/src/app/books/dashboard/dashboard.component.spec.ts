@@ -3,7 +3,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DashboardComponent } from './dashboard.component';
 import { BookRatingService } from '../shared/book-rating.service';
 import { Book } from '../shared/book';
-import { BookComponent } from '../book/book.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('DashboardComponent', () => {

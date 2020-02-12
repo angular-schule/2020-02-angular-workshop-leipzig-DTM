@@ -24,6 +24,8 @@
 
       <button (click)="doRateUp()" data-tid="rateUpBtn" class="btn btn-success mr-2"> + </button>
       <button (click)="doRateDown()" class="btn btn-danger mr-2"> – </button>
+
+      <a [routerLink]="['/books', book.isbn]">Details</a>
   </div>
 </div>
 
