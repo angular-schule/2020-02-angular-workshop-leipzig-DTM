@@ -1,1 +1,18 @@
-<p>search works!</p>
+<div class="form-group">
+  <input type="text" [formControl]="searchControl" class="form-control form-control-lg">
+</div>
+
+<div *ngIf="loading">
+  Wird geladen...
+</div>
+
+<ng-container *ngIf="results$ | async as results">
+
+  <div *ngIf="!results.length">Keine Ergebnisse</div>
+
+  <ul>
+    <li *ngFor="let b of results">
+      <a [routerLink]="['/books', b.isbn]">{{ b.title }}</a>
+    </li>
+  </ul>
+</ng-container>
