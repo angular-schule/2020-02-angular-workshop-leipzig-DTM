@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { fromEvent } from 'rxjs';
-import { concatMap, takeUntil } from 'rxjs/operators';
+import { concatMap, takeUntil, mergeMap } from 'rxjs/operators';
 
 @Component({
   selector: 'rxw-dragdrop',
@@ -19,7 +19,9 @@ export class DragdropComponent implements OnInit {
 
     /******************************/
 
-
+    mouseDown$.pipe(
+      mergeMap(() => mouseMove$.pipe(takeUntil(mouseUp$)))
+    ).subscribe(e => this.setTargetPosition(e));
 
     /******************************/
   }
